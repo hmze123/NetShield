@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/coordinator">
+
+        <LinearLayout
+            android:id="@+id/activity_mainLinearLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="3dp"
+            app:layout_anchor="@+id/activity_mainLinearLayout"
+            app:layout_anchorGravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/homeCardView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="2.0dip"
+                app:cardElevation="2.0dip">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="3dp">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5.0dip"
+                        android:layout_marginTop="10.0dip"
+                        android:background="#fffff6"
+                        android:gravity="start|center"
+                        android:orientation="horizontal"
+                        android:weightSum="2.0">
+
+                        <Spinner
+                            android:id="@+id/serverSpinner"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp">
+
+                        </Spinner>
+
+                        <LinearLayout
+                            android:layout_width="200.0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:gravity="end"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btnStart"
+                                android:layout_width="140dp"
+                                android:layout_height="50dp"
+                                android:text="@string/connect"
+                                android:textSize="12.0dip" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txipssh"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:visibility="visible"
+                        app:endIconMode="password_toggle">
+
+                        <EditText
+                            android:id="@+id/edInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="50"
+                            android:hint="ip:port@user:pass"
+                            android:inputType="textMultiLine|textWebEmailAddress"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txipvpn"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="50"
+                        android:hint="user:pass"
+                        android:inputType="textMultiLine|textWebEmailAddress"
+                        android:padding="3dp"
+                        android:textSize="14sp"
+                        android:visibility="gone"
+                        app:endIconMode="password_toggle">
+
+                        <EditText
+                            android:id="@+id/edInputVpn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sshmode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/isUsePayload"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="cbOnclick"
+                            android:text="Use Payload"
+                            android:textSize="12.0dip"
+                            android:visibility="visible" />
+
+                        <CheckBox
+                            android:id="@+id/isSSL"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="cbOnclick"
+                            android:text="Use SSL/TLS"
+                            android:textSize="12.0dip" />
+
+                        <CheckBox
+                            android:id="@+id/isAutoReplace"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Auto Replace"
+                            android:textSize="12.0dip" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ovpnmode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/isUsePayloadOvpn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="cbOnclickOVPN"
+                            android:text="OVPN Payload"
+                            android:textSize="12.0dip"
+                            android:visibility="visible" />
+
+                        <CheckBox
+                            android:id="@+id/isSSLOvpn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="cbOnclickOVPN"
+                            android:text="OVPN SSL/TLS"
+                            android:textSize="12.0dip" />
+
+                        <CheckBox
+                            android:id="@+id/isAutoReplace"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Auto Replace"
+                            android:textSize="12.0dip" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/isDnsEnable"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Enable DNS"
+                            android:textSize="12.0dip" />
+
+                        <CheckBox
+                            android:id="@+id/isWakeLock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="WakeLock"
+                            android:textSize="12.0dip" />
+
+                        <CheckBox
+                            android:id="@+id/isUDPGW"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="UDPGW"
+                            android:textSize="12.0dip" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ovpndetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/isDetailLog"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Detail Log"
+                            android:textSize="12.0dip" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/slowdns"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="#fffff6"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="dnstt"
+                android:visibility="gone"
+                app:cardCornerRadius="2.0dip"
+                app:cardElevation="2.0dip">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewusldTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1.0"
+                        android:text="DNSTT Tweak Settings"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/imageViewovpn"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_ed"
+                        android:tint="@color/colorAccent" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/udpsse"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="#fffff6"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="udpss"
+                android:visibility="gone"
+                app:cardCornerRadius="2.0dip"
+                app:cardElevation="2.0dip">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewudTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1.0"
+                        android:text="UDP Tweak Settings"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/imageViewovpn"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_ed"
+                        android:tint="@color/colorAccent" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/v2v"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="#fffff6"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="v2r"
+                android:visibility="gone"
+                app:cardCornerRadius="2.0dip"
+                app:cardElevation="2.0dip">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewv2rayTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1.0"
+                        android:text="Configure V2Ray Config (json)"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/imageViewovpn"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_ed"
+                        android:tint="@color/colorAccent" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/psiphonmode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Psiphon Settings"
+                        android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Protocol"
+                        android:layout_marginTop="16dp"/>
+                    <Spinner
+                        android:id="@+id/psiphonProtocolSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Server Region"
+                        android:layout_marginTop="16dp"/>
+                    <Spinner
+                        android:id="@+id/psiphonRegionSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Authorizations: JSON Format [...]"
+                        android:layout_marginTop="16dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/psiphonAuthEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Target Server Entry"
+                        android:layout_marginTop="16dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/psiphonServerEntryEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/trojanmode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Trojan Settings"
+                                android:textAppearance="?attr/textAppearanceHeadline6"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Remarks (Alias)"
+                                android:layout_marginTop="16dp">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/trojanRemarksEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:singleLine="true"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Server Address"
+                                android:layout_marginTop="8dp">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/trojanAddressEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:singleLine="true"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Server Port"
+                                android:layout_marginTop="8dp">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/trojanPortEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="number"
+                                    android:singleLine="true"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Password"
+                                android:layout_marginTop="8dp">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/trojanPasswordEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:singleLine="true"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="SNI (Server Name Indication)"
+                                android:layout_marginTop="8dp">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/trojanSniEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:singleLine="true"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ovpn2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="#fffff6"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="ovpne"
+                android:visibility="gone"
+                app:cardCornerRadius="2.0dip"
+                app:cardElevation="2.0dip">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewopenvpnTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1.0"
+                        android:text="Configure OpenVPN Config"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/imageViewovpn"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_ed"
+                        android:tint="@color/colorAccent" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/logLevelLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="3dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOG LEVEL:"
+                    android:textSize="12sp" />
+
+                <com.fdx.injector.view.SeekBarTicks
+                    android:id="@+id/LogLevelSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    tools:max="5" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/statusConn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="3dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STATUS CONNECTION:"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/logTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="No process running"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/NoteLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Note:" />
+
+                    <TextView
+                        android:id="@+id/logNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <FrameLayout
+                android:id="@+id/ad_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true">
+
+            </FrameLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/add_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:tint="#000"
+                app:srcCompat="@drawable/ic_filter_list_white_24dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/app_name"
+                android:tint="#000"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/ic_save" />
+
+            <CheckBox
+                android:id="@+id/isShowStats"
+                android:layout_width="8dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:text="Show Status"
+                android:textSize="12.0dip" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/app_name"
+                android:tint="#000"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/ic_description_white_24dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/app_name"
+                android:tint="#000"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/ic_key" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/wgmode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="WireGuard Config"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                    <EditText
+                        android:id="@+id/wgConfigEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minLines="6"
+                        android:gravity="top|start"
+                        android:hint="[Interface]\nPrivateKey = ...\nAddress = ...\n\n[Peer]\nPublicKey = ...\nAllowedIPs = ...\nEndpoint = ..."
+                        android:inputType="textMultiLine"
+                        android:background="@drawable/custom_inp"
+                        android:padding="8dp"
+                        android:layout_marginTop="8dp"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toTopOf="@+id/fab1"
+        app:layout_constraintEnd_toStartOf="@+id/fab1"
+        app:layout_constraintBottom_toBottomOf="@+id/fab1"
+        android:id="@+id/export_config_text"
+        android:text=" Save config " />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toTopOf="@+id/fab3"
+        app:layout_constraintEnd_toStartOf="@+id/fab3"
+        app:layout_constraintBottom_toBottomOf="@+id/fab3"
+        android:id="@+id/import_cfg_text"
+        android:text=" Open config " />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toTopOf="@+id/fab2"
+        app:layout_constraintEnd_toStartOf="@+id/fab2"
+        app:layout_constraintBottom_toBottomOf="@+id/fab2"
+        android:id="@+id/import_ovpn_text"
+        android:text=" Open Cfg OVPN " />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

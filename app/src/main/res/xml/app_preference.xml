@@ -1,0 +1,26 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:key="screenMain">
+
+    <PreferenceCategory android:title="Connection" app:iconSpaceReserved="false">
+        <androidx.preference.CheckBoxPreference android:defaultValue="false" android:key="speed_meter" android:summary="Show speed on notification." android:title="Speed Meter" app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Data Compression" app:iconSpaceReserved="false">
+        <androidx.preference.CheckBoxPreference android:defaultValue="true" android:key="data_compression" android:summary="Compresses and speed up data transfer for files/data that can be compressed. NOT recommended for low memory device." android:title="Data Compression" app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+    <!-- <PreferenceCategory android:title="CPU Wakelock" app:iconSpaceReserved="false"> -->
+        <!-- <androidx.preference.CheckBoxPreference android:defaultValue="true" android:key="wakelock" android:summary="Activate only if the application is stopping working on its own, as happens when locking the screen on some devices." android:title="CPU Wakelock" app:iconSpaceReserved="false" /> -->
+    <!-- </PreferenceCategory> -->
+    <!--<PreferenceCategory android:title="@string/category_forward_udp" app:iconSpaceReserved="false">
+        <androidx.preference.CheckBoxPreference android:defaultValue="true" android:key="udpForward" android:summary="@string/summary_forward_udp" android:title="@string/title_forward_udp" app:iconSpaceReserved="false" />
+
+        <com.fdx.injector.view.SummaryEditTextPreference android:dialogLayout="@layout/pref_dialog_edittext_fix" android:dialogMessage="" android:key="udpResolver" android:singleLine="true" android:summary="@string/summary_resolver_udp" android:title="@string/title_resolver_udp" app:iconSpaceReserved="false" />
+    </PreferenceCategory>-->
+    <!-- <PreferenceCategory android:title="@string/category_forward_dns" app:iconSpaceReserved="false"> -->
+        <!-- <androidx.preference.CheckBoxPreference android:defaultValue="true" android:key="dnsForward" android:summary="@string/summary_forward_dns" android:title="@string/title_forward_dns" app:iconSpaceReserved="false" /> -->
+    <!-- </PreferenceCategory> -->
+    <PreferenceCategory android:title="Ping Utility" app:iconSpaceReserved="false">
+        <androidx.preference.CheckBoxPreference android:key="auto_ping" android:summary="Pinger with url for keep-alive connection, used for stabilizing and prevent your connection from sleep." android:title="Auto Ping" app:iconSpaceReserved="false" />
+
+        <com.fdx.injector.view.SummaryEditTextPreference android:defaultValue="clients3.google.com" android:dependency="auto_ping" android:dialogLayout="@layout/pref_dialog_edittext_fix" android:key="ping_server" android:summary="Set ping server" android:title="Ping Server" app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

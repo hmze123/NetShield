@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.slipkprojects.sockshttp.wifi.MainActivityWifi" >
+<com.google.android.material.appbar.AppBarLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+	   <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            android:background="?colorPrimary"
+            android:layout_width="fill_parent"
+            android:layout_height="?actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+	</com.google.android.material.appbar.AppBarLayout>
+     <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10.0dip">
+    
+    <com.google.android.material.textfield.TextInputLayout
+        
+        
+        android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/portEditText"
+            android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+            android:hint="Entr port ( ex 8080 , 10809 )"
+            android:maxLines="5"
+            android:ems="10"
+            android:inputType="number"  />
+    </com.google.android.material.textfield.TextInputLayout>
+     </LinearLayout>
+    
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+		android:textColor="#ffffff"
+        android:text="START SERVER" />
+		
+	<Button
+        android:id="@+id/stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:textColor="#ffffff"
+        android:text="STOP SERVER" />
+		
+    <Button
+        android:id="@+id/WiFiTetherButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:textColor="#ffffff"
+        android:text="WI-FI SHARING SETTINGS" />
+
+    <Button
+        android:id="@+id/restart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RESTART"
+		android:textColor="#ffffff"
+         />
+    <Button
+        android:id="@+id/hdwifi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WIFI SHARING GUIDE"
+        android:textColor="#ffffff"
+    />
+    <androidx.cardview.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12.0dip">
+                <LinearLayout
+                    android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10.0dip">
+    <TextView
+        android:id="@+id/proxyStatus"
+        android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+        android:textColor="@color/red"
+        android:gravity="center_horizontal"
+        android:textSize="12pt" />
+
+    <TextView
+        android:id="@+id/proxyURL"
+        android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+        android:textColor="#2AFF0D"
+        android:gravity="center_horizontal"
+        android:textSize="12pt" />
+    
+     </LinearLayout>
+            </androidx.cardview.widget.CardView>
+    
+        
+
+</LinearLayout>

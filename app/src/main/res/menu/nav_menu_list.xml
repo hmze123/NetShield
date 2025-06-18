@@ -1,0 +1,52 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	
+    <item
+        android:id="@+id/payGen" 
+        android:icon="@drawable/ic_generatorr" 
+        android:title="Payload Generator"/>
+
+    <group
+        android:id="@+id/grup1" 
+        android:title="Connection">
+        <item 
+            android:title="Utility">
+			<menu>
+                <item 
+                    android:id="@+id/payloadOpen" 
+                    android:icon="@drawable/ic_payloadd" 
+                    android:title="Payload"/>
+               
+				<item 
+                    android:id="@+id/sniOpen" 
+                    android:icon="@drawable/ic_snii" 
+                    android:title="SNI"/>
+        	</menu>
+		</item>
+	</group>
+	
+
+    <group android:id="@+id/grup3">
+        <item 
+            android:title="Tools">
+			<menu>
+                <item android:id="@+id/dnsOpen" 
+                    android:icon="@drawable/ic_dnss" 
+                    android:title="DNS Custom"/>
+				<item 
+                    android:id="@+id/udpgwOpen" 
+                    android:icon="@drawable/ic_udpw" 
+                    android:title="UDPGW SSH"/>
+				<item 
+                    android:id="@+id/hwidOpen" 
+                    android:icon="@drawable/ic_locks_trap" 
+                    android:title="HWID"/>
+        	</menu>
+		</item>
+    </group>
+
+    <item 
+        android:id="@+id/aboutapp" 
+        android:icon="@drawable/ic_about" 
+        android:title="About"/>
+
+</menu>

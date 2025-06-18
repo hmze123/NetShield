@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:orientation="vertical">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_margin="10dp"
+                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <EditText
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:hint="-----BEGIN CERTIFICATE-----"
+                     android:textSize="10sp"
+                     tools:ignore="TouchTargetSizeCheck"
+                     android:id="@+id/BEGIN_CERTIFICATE" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

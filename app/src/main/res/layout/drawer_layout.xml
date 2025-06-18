@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/coordinatorLayout">
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        android:id="@+id/drawerLayout">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:id="@+id/appBar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:liftOnScroll="false"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    app:subtitleTextAppearance="@style/ToolbarSubtitleTheme"
+                    app:title="@string/app_name"
+                    app:titleTextAppearance="@style/ToolbarTitleTheme" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/viewPager"
+                app:layout_constraintTop_toBottomOf="@id/appBar">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tab1"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/activity_home" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tab2"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/activity_logs" />
+
+                </LinearLayout>
+                
+                  <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tab3"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/activity_tools" />
+
+                </LinearLayout>
+                
+
+               
+               
+
+
+            </androidx.viewpager.widget.ViewPager>
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/navigation"
+                app:menu="@menu/b"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+		
+		<com.google.android.material.navigation.NavigationView
+			android:layout_height="match_parent"
+			android:layout_width="wrap_content"
+			app:menu="@menu/nav_menu_list"
+			app:headerLayout="@layout/layout_header"
+			android:layout_gravity="start"
+			android:id="@+id/shitstuff" />
+		
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

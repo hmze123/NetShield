@@ -1,0 +1,49 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+		
+		<TextView
+			android:layout_marginStart="10dp"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:text="V2Ray Config (json)"
+			/>
+
+        <LinearLayout
+			android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <com.amrdeveloper.codeview.CodeView
+                android:id="@+id/codeVieww"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/darkGrey"
+                android:dropDownHorizontalOffset="0dp"
+                android:dropDownSelector="@color/white"
+                android:dropDownWidth="150dp"
+                android:gravity="top|start" />
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/save_v2ray_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_save" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

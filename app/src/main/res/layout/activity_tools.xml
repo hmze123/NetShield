@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:orientation="vertical"
+     android:fitsSystemWindows="true">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:orientation="horizontal"
+         android:layout_marginTop="10.0dp">
+
+        <com.google.android.material.textview.MaterialTextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textAppearance="?android:textAppearanceSmall"
+             android:textSize="7.0sp"
+             android:textColor="@color/colorAccent"
+             android:layout_marginLeft="10dp"
+             android:text="Connection Type :" />
+
+        <com.google.android.material.textview.MaterialTextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textAppearance="?android:textAppearanceSmall"
+             android:textSize="7.0sp"
+             android:textColor="#2AFF0D"
+             android:layout_marginLeft="5dp"
+             android:text="Operator"
+             android:id="@+id/socketnet" />
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="right"
+             android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textAppearance="?android:attr/textAppearanceSmall"
+                 android:textSize="10sp"
+                 android:textColor="@color/colorAccent"
+                 android:layout_marginRight="3dp"
+                 android:text="IP Local :" />
+
+            <com.google.android.material.textview.MaterialTextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textAppearance="?android:textAppearanceSmall"
+                 android:textSize="7.0sp"
+                 android:textColor="#2AFF0D"
+                 android:layout_marginRight="10dp"
+                 android:id="@+id/socketIp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent"
+         android:layout_marginBottom="4.0dip"
+         android:background="@color/tols_background"
+         android:clickable="true"
+         android:padding="5.0dip"
+         android:layout_marginLeft="8.0dip"
+         android:layout_marginRight="8.0dip"
+         android:layout_marginTop="10.0dip"
+         android:foreground="?android:selectableItemBackground"
+         android:id="@+id/cardtools1">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:layout_margin="10dp"
+             android:orientation="horizontal">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:orientation="vertical"
+                 android:layout_weight="1.0">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:attr/textAppearanceMedium"
+                     android:textColor="@color/tols_text"
+                     android:text="Hotspot Share"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:textAppearanceSmall"
+                     android:textColor="@color/tols_text"
+                     android:text="Run a proxy server to share your vpn connection" />
+
+            </LinearLayout>
+
+            <ImageView
+                 android:layout_height="20dp"
+                 android:layout_width="20dp"
+                 android:src="@drawable/baseline_keyboard_arrow_right_black_24"
+                 android:tint="?colorAccent" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent"
+         android:layout_marginBottom="4.0dip"
+         android:background="@color/tols_background"
+         android:clickable="true"
+         android:padding="5.0dip"
+         android:layout_marginLeft="8.0dip"
+         android:layout_marginRight="8.0dip"
+         android:layout_marginTop="10.0dip"
+         android:foreground="?android:selectableItemBackground"
+         android:id="@+id/cardtools2">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:layout_margin="10dp"
+             android:orientation="horizontal">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:orientation="vertical"
+                 android:layout_weight="1.0">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:attr/textAppearanceMedium"
+                     android:textColor="@color/tols_text"
+                     android:text="Host Checker"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:textAppearanceSmall"
+                     android:textColor="@color/tols_text"
+                     android:text="Check host header information" />
+
+            </LinearLayout>
+
+            <ImageView
+                 android:layout_height="20dp"
+                 android:layout_width="20dp"
+                 android:src="@drawable/baseline_keyboard_arrow_right_black_24"
+                 android:tint="?colorAccent" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent"
+         android:layout_marginBottom="4.0dip"
+         android:background="@color/tols_background"
+         android:clickable="true"
+         android:padding="5.0dip"
+         android:layout_marginLeft="8.0dip"
+         android:layout_marginRight="8.0dip"
+         android:layout_marginTop="10.0dip"
+         android:foreground="?android:selectableItemBackground"
+         android:id="@+id/cardtools3">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:layout_margin="10dp"
+             android:orientation="horizontal">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:orientation="vertical"
+                 android:layout_weight="1.0">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:attr/textAppearanceMedium"
+                     android:textColor="@color/tols_text"
+                     android:text="IP Hunter"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:textAppearanceSmall"
+                     android:textColor="@color/tols_text"
+                     android:text="Search local IP address" />
+
+            </LinearLayout>
+
+            <ImageView
+                 android:layout_height="20dp"
+                 android:layout_width="20dp"
+                 android:src="@drawable/baseline_keyboard_arrow_right_black_24"
+                 android:tint="?colorAccent" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent"
+         android:layout_marginBottom="4.0dip"
+         android:background="@color/tols_background"
+         android:clickable="true"
+         android:padding="5.0dip"
+         android:layout_marginLeft="8.0dip"
+         android:layout_marginRight="8.0dip"
+         android:layout_marginTop="10.0dip"
+         android:foreground="?android:selectableItemBackground"
+         android:id="@+id/cardtools4">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:layout_margin="10dp"
+             android:orientation="horizontal">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:orientation="vertical"
+                 android:layout_weight="1.0">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:attr/textAppearanceMedium"
+                     android:textColor="@color/tols_text"
+                     android:text="Ping Hostname IP"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:textAppearanceSmall"
+                     android:textColor="@color/tols_text"
+                     android:text="Ping a hostname or ip address" />
+
+            </LinearLayout>
+
+            <ImageView
+                 android:layout_height="20dp"
+                 android:layout_width="20dp"
+                 android:src="@drawable/baseline_keyboard_arrow_right_black_24"
+                 android:tint="?colorAccent" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent"
+         android:layout_marginBottom="4.0dip"
+         android:background="@color/tols_background"
+         android:clickable="true"
+         android:padding="5.0dip"
+         android:layout_marginLeft="8.0dip"
+         android:layout_marginRight="8.0dip"
+         android:layout_marginTop="10.0dip"
+         android:foreground="?android:selectableItemBackground"
+         android:id="@+id/cardtools5">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:layout_margin="10dp"
+             android:orientation="horizontal">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:orientation="vertical"
+                 android:layout_weight="1.0">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:attr/textAppearanceMedium"
+                     android:textColor="@color/tols_text"
+                     android:text="Scan Port"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:textAppearanceSmall"
+                     android:textColor="@color/tols_text"
+                     android:text="Find open ports on IP" />
+
+            </LinearLayout>
+
+            <ImageView
+                 android:layout_height="20dp"
+                 android:layout_width="20dp"
+                 android:src="@drawable/baseline_keyboard_arrow_right_black_24"
+                 android:tint="?colorAccent" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent"
+         android:layout_marginBottom="4.0dip"
+         android:background="@color/tols_background"
+         android:clickable="true"
+         android:padding="5.0dip"
+         android:layout_marginLeft="8.0dip"
+         android:layout_marginRight="8.0dip"
+         android:layout_marginTop="10.0dip"
+         android:foreground="?android:selectableItemBackground"
+         android:id="@+id/cardtools6">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:layout_margin="10dp"
+             android:orientation="horizontal">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:orientation="vertical"
+                 android:layout_weight="1.0">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:attr/textAppearanceMedium"
+                     android:textColor="@color/tols_text"
+                     android:text="GEO Location"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:textAppearanceSmall"
+                     android:textColor="@color/tols_text"
+                     android:text="Check Location." />
+
+            </LinearLayout>
+
+            <ImageView
+                 android:layout_height="20dp"
+                 android:layout_width="20dp"
+                 android:src="@drawable/baseline_keyboard_arrow_right_black_24"
+                 android:tint="?colorAccent" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent"
+         android:layout_marginBottom="4.0dip"
+         android:background="@color/tols_background"
+         android:clickable="true"
+         android:padding="5.0dip"
+         android:layout_marginLeft="8.0dip"
+         android:layout_marginRight="8.0dip"
+         android:layout_marginTop="10.0dip"
+         android:foreground="?android:selectableItemBackground"
+         android:id="@+id/cardtools7">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:layout_margin="10dp"
+             android:orientation="horizontal">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:orientation="vertical"
+                 android:layout_weight="1.0">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:attr/textAppearanceMedium"
+                     android:textColor="@color/tols_text"
+                     android:text="Subdomain Finder"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?android:textAppearanceSmall"
+                     android:textColor="@color/tols_text"
+                     android:text="Find the host" />
+
+            </LinearLayout>
+
+            <ImageView
+                 android:layout_height="20dp"
+                 android:layout_width="20dp"
+                 android:src="@drawable/baseline_keyboard_arrow_right_black_24"
+                 android:tint="?colorAccent" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.cardview.widget.CardView
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent"
+         android:clickable="true"
+         android:onClick="hype"
+         app:cardElevation="2.0dip"
+         app:cardBackgroundColor="@color/tols_background"
+         android:layout_marginLeft="10dp"
+         android:layout_marginRight="10dp"
+         android:layout_marginTop="5dp"
+         app:cardCornerRadius="2.0dip"
+         android:foreground="?android:attr/selectableItemBackground"
+         android:id="@+id/dialogz_cardView">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:padding="7dp"
+             android:orientation="horizontal">
+
+            <ImageView
+                 android:layout_height="26dp"
+                 android:layout_width="30dp"
+                 android:src="@drawable/et"
+                 android:tint="@color/colorAccent" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textColor="@color/tols_text"
+                 android:layout_marginLeft="10dp"
+                 android:text="Join telegram"
+                 android:layout_gravity="center_vertical" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    
+    	<com.google.android.gms.ads.AdView
+		xmlns:ads="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/adViewww"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_alignParentBottom="true"
+		ads:adSize="BANNER"
+		ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+		android:layout_gravity="bottom"
+		android:layout_marginTop="10dp">
+
+	</com.google.android.gms.ads.AdView>
+    
+
+</LinearLayout>

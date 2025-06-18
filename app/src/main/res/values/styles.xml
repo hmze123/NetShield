@@ -1,0 +1,111 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="preferenceTheme">@style/AppPreference</item>
+        <item name="alertDialogTheme">@style/AppAlertDialog</item>
+        <item name="android:fontFamily">@font/a</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">14sp</item>
+        <item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
+        <item name="alertDialogTheme">@style/AppAlertDialog</item>
+        <item name="android:actionButtonStyle">@style/myActionButtonStyle</item>
+        <item name="actionButtonStyle">@style/myActionButtonStyle</item>
+        <item name="android:statusBarColor" tools:targetApi="21">#FF6750A4</item>
+        <item name="android:navigationBarColor" tools:targetApi="21">@color/colorPrimaryDark</item>
+        <item name="alertDialogTheme">@style/AppAlertDialog</item>
+    </style>
+    <style name="AppAlertDialog" parent="Theme.Material3.Dark.Dialog.Alert">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+        <item name="buttonTint">@color/white</item>
+    </style>
+    <style name="myActionButtonStyle" parent="Widget.AppCompat.ActionButton">
+        <item name="android:minWidth">32dp</item>
+        <item name="android:maxWidth">32dp</item>
+        <item name="android:width">32dp</item>
+    </style>
+    <style name="AppPreferenceThemeOverlay" parent="@style/PreferenceThemeOverlay">
+        <item name="switchPreferenceCompatStyle">@style/AppSwitchPreference</item>
+    </style>
+    <style name="AppSwitchPreference" parent="@style/Preference.SwitchPreferenceCompat.Material">
+        <item name="widgetLayout">@layout/preference_material_switch</item>
+    </style>
+    <style name="AppPreference" parent="PreferenceThemeOverlay">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="blinkt.dialog" parent="android:Theme.DeviceDefault.Light.Dialog"/>
+    <style name="ToolbarSubtitleTheme" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">10.0dip</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+        <!--  Alert Dialog  -->
+    </style>
+    <style name="TabTitleTheme" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:shadowDy">2.0</item>
+        <item name="android:shadowRadius">2.0</item>
+    </style>
+
+    <style name="ToolbarTitleTheme" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">19.0dip</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDy">2.0</item>
+        <item name="android:shadowRadius">2.0</item>
+    </style>
+
+    <!--  Toolbar theme  -->
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!--  android:textColorPrimary is the color of the title text in the Toolbar  -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <!--  actionMenuTextColor is the color of the text of action (menu) items  -->
+        <item name="actionMenuTextColor">@android:color/holo_green_light</item>
+        <!--  Tints the input fields like checkboxes and text fields  -->
+        <item name="colorAccent">@color/white</item>
+        <!--  Applies to views in their normal state.  -->
+        <item name="colorControlNormal">@color/white</item>
+        <!--  Applies to views in their activated state (i.e checked or switches)  -->
+        <item name="colorControlActivated">@color/white</item>
+        <!--  Applied to framework control highlights (i.e ripples or list selectors)  -->
+        <item name="colorControlHighlight">@color/white</item>
+        <!--  Enable these below if you want clicking icons to trigger a ripple effect  -->
+        <!--  <item name="selectableItemBackground">?android:selectableItemBackground</item> <item name="selectableItemBackgroundBorderless">?android:selectableItemBackground</item>  -->
+    </style>
+    <!--  Necessario para o modo noturno  -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">21sp</item>
+        <item name="android:textStyle">italic</item>
+	</style>
+    
+    <style name="my_fab">
+        <item name="android:background">@drawable/bg_label</item>
+    </style>
+
+    <style name="mytoast">
+        <item name="stTextBold">false</item>
+        <item name="stTextColor">@color/black</item>
+        <item name="stColorBackground">#ffffff</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stStrokeWidth">1dp</item>
+        <item name="stStrokeColor">@color/teal_200</item>
+        <item name="stLength">SHORT</item>
+        <item name="stRadius">8dp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_clear_logs"
+        android:icon="@drawable/deletee"
+        app:showAsAction="always"
+        android:title="Clear Logs">
+    </item>
+
+    <item
+        android:id="@+id/action_copy_logs"
+        android:icon="@drawable/ic_copys"
+        app:showAsAction="always"
+        android:title="Copy Logs">
+    </item>
+
+
+
+
+
+</menu>

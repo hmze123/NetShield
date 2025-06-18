@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="fill_parent"
+     android:layout_width="fill_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent"
+         app:layout_constraintTop_toTopOf="parent"
+         android:id="@+id/appBar">
+
+        <com.google.android.material.appbar.MaterialToolbar
+             android:layout_height="wrap_content"
+             android:layout_width="fill_parent"
+             android:id="@+id/toolbar" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+         android:layout_height="0.0dip"
+         android:layout_width="fill_parent"
+         android:importantForAccessibility="no"
+         android:layout_margin="10.0dip"
+         app:cardElevation="10.0dip"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/appBar"
+         app:cardCornerRadius="10.0dip"
+         app:contentPadding="10.0dip"
+         android:layout_gravity="center"
+         android:id="@+id/card_view">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="fill_parent"
+             android:padding="0.0dip"
+             android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent"
+                 app:lottie_rawRes="@raw/block"
+                 android:id="@+id/block" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="fill_parent"
+                 android:visibility="gone"
+                 android:gravity="center"
+                 android:textSize="16.0sp"
+                 android:layout_weight="1.0"
+                 android:layout_gravity="center"
+                 android:id="@+id/bloqueda"
+                 android:text="CONFIGURACION BLOQUEADA" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="fill_parent"
+                 android:gravity="top"
+                 android:layout_marginTop="5.0dip"
+                 android:id="@+id/v2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                     android:layout_height="fill_parent"
+                     android:layout_width="fill_parent"
+                     android:hint="Pega tu JSON"
+                     android:textSize="14.0sp"
+                     android:ems="50"
+                     android:layout_weight="1.0"
+                     android:inputType="textWebEmailAddress|textMultiLine"
+                     android:id="@+id/v2ray_json_config" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

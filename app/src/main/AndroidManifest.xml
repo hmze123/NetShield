@@ -1,0 +1,250 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="34" />
+
+      <uses-permission android:name="android.permission.BROADCAST_SMS"
+          tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Request specific foreground permissions on Android 14+ -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC"/>
+    
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+    <application
+        android:name="com.fdx.injector.MainApp"
+        android:allowBackup="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme"
+        android:windowSoftInputMode="adjustResize" >
+    
+	    <activity
+            android:name="com.fdx.injector.coreservice.LaunchVpn"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:taskAffinity=".LaunchVPN"
+            tools:ignore="MissingClass">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.fdx.injector.coreservice.util.DummyActivity"
+            android:allowTaskReparenting="true"
+            android:alwaysRetainTaskState="false"
+            android:clearTaskOnLaunch="true"
+            android:enabled="true"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:finishOnTaskLaunch="true"
+            android:noHistory="true"
+            android:stateNotNeeded="true"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <receiver
+            android:name="com.fdx.injector.coreservice.MainReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action
+                    android:name=".MainReceiver.ACTION_SERVICE_STOP"
+                    android:exported="true" >
+                </action>
+                <action
+                    android:name=".MainReceiver.ACTION_SERVICE_RESTART"
+                    android:exported="true" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".coreservice.WireGuardService"
+            android:permission="android.permission.BIND_VPN_SERVICE"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+        </service>
+
+        <service android:name=".coreservice.PsiphonService" />
+
+        <service android:name="com.psiphon3.psiphonlibrary.PsiphonService" />
+        <receiver android:name="com.psiphon3.psiphonlibrary.UpgradeReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <data android:scheme="package"
+                    android:path="com.fdx.injector" />
+            </intent-filter>
+        </receiver>
+        
+		<activity
+            android:name="com.fdx.injector.MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+	
+   	 <activity
+            android:name="com.fdx.injector.activities.AboutActivity"
+			android:label="About"
+            android:parentActivityName="com.fdx.injector.MainActivity" />
+
+		 <activity
+            android:name="com.fdx.injector.activities.OvpnActivity"
+			android:label="Ovpn config"
+            android:parentActivityName="com.fdx.injector.MainActivity" />
+        
+        	 <activity
+            android:name="com.fdx.injector.activities.V2Ray_activity"
+			android:label="V2Ray config Json"
+            android:parentActivityName="com.fdx.injector.MainActivity" />
+        
+        
+        		<activity
+             android:name="com.fdx.injector.activities.v2ray"
+            android:label="V2ray JSON"
+            android:parentActivityName="com.fdx.injector.MainActivity" />
+        
+        
+               <activity android:name="com.fdx.injector.ActivityTools.IpHunter"
+                 android:exported="true"/>
+         
+        
+               <activity android:name="com.fdx.injector.ActivityTools.subfinder"
+                 android:exported="true"/>
+        
+               <activity android:name="com.fdx.injector.ActivityTools.MyIP_Address"/>
+        
+              
+      
+             <activity android:name="com.fdx.injector.activitytools.ping" 
+                    android:exported="false"/>
+        
+        
+             <activity android:name=".subfinder" 
+                    android:exported="false"/>
+      
+               <activity android:name="com.fdx.injector.ActivityTools.HostChecker"/>
+        
+		        <activity android:name="com.fdx.injector.activitytools.scanports" 
+                     android:exported="false"/>
+		
+        <activity
+            android:name="com.fdx.injector.activities.CallerPref"
+            android:label="@string/settings"
+            android:parentActivityName="com.fdx.injector.MainActivity" />
+        
+            
+        <activity
+            android:name="com.fdx.injector.ActivityTools.MainActivityWifi"
+            android:parentActivityName="com.fdx.injector.MainActivity"
+            android:exported="false"
+            android:label="Hotspot Tether">
+        </activity>
+
+           <service
+            android:label="@string/app_name"
+            android:name="com.fdx.injector.wifi.ProxyService"
+            android:stopWithTask="false"
+            android:exported="false">
+
+        </service>
+        
+
+        <service
+            android:name="com.fdx.injector.coreservice.tunnel.vpn.TunnelVpnService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_VPN_SERVICE" >
+            <intent-filter>
+                <action
+                    android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.fdx.injector.coreservice.SocksHttpService"
+            android:exported="true"
+            android:foregroundServiceType="dataSync"
+            android:stopWithTask="false" >
+        </service>
+       
+        
+        <service
+            android:name="com.fdx.injector.coreservice.tunnel.V2Proxy"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:process=":RunSoLibV2RayDaemon" />
+        <service
+            android:name="com.fdx.injector.coreservice.V2Service"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_VPN_SERVICE"
+            android:process=":RunSoLibV2RayDaemon">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.net.VpnService.SUPPORTS_ALWAYS_ON"
+                android:value="true" />
+        </service>
+        
+
+        <activity
+            android:name="de.blinkt.openvpn.DisconnectVPNActivity"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:taskAffinity=".DisconnectVPN"
+            android:theme="@style/blinkt.dialog" />
+
+        <service
+            android:name="de.blinkt.openvpn.core.OpenVPNService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_VPN_SERVICE" >
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.fdx.injector.coreservice.SOCKETService"
+            android:exported="false" />
+        
+        
+     <meta-data
+        android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="ca-app-pub-3940256099942544~3347511713"/>
+     <meta-data
+          android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
+          android:value="true"/>
+     <meta-data
+          android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
+          android:value="true"/>
+            
+    <uses-library
+        android:name="org.apache.http.legacy"
+        android:required="false"/>
+    </application>
+
+</manifest>

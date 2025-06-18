@@ -1,0 +1,3 @@
+rootProject.name = "FDX Injector"
+include ':app', ':libv2ray'
+include ':sing-box-for-android-main'

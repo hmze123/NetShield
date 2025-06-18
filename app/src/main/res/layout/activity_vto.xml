@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
+         android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+         android:id="@+id/appbar">
+
+        <com.google.android.material.appbar.MaterialToolbar
+             android:layout_height="?attr/actionBarSize"
+             android:layout_width="match_parent"
+             android:background="@color/colorPrimary"
+             app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
+             android:id="@+id/toolbar" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+         android:id="@+id/nested_scroll_view">
+
+        
+            <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <com.amrdeveloper.codeview.CodeView
+             android:layout_height="fill_parent"
+             android:layout_width="fill_parent"
+             android:background="@color/darkGrey"
+             android:gravity="top|start"
+             android:dropDownSelector="@color/white"
+             android:dropDownWidth="150dp"
+             android:dropDownHorizontalOffset="0dp"
+             android:id="@+id/codeVieww" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+         layout="@layout/v2ray_activity" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

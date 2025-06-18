@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    
+    <item
+        android:id="@+id/pega"
+        android:icon="@drawable/fx"
+        app:showAsAction="always"
+        android:title="Pegar JSON">
+    </item>
+    
+    <item
+        android:id="@+id/borrar"
+        android:icon="@drawable/borrar"
+        app:showAsAction="always"
+        android:title="Resetear">
+    </item>
+    
+    
+       <item
+        android:id="@+id/guardar"
+        android:icon="@drawable/ic_save"
+        app:showAsAction="always"
+        android:title="Guardar">
+    </item>
+    
+    
+
+</menu>

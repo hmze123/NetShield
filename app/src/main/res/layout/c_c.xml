@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+	android:paddingTop="5dp"
+	android:paddingBottom="5dp"
+	android:paddingStart="5dp"
+	android:paddingEnd="5dp">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:dividerVertical" />
+
+    <LinearLayout
+		android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOCKED !!"
+			android:textStyle="bold|italic"
+            android:textSize="17sp" />
+    </LinearLayout>
+	
+	    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:dividerVertical" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+		android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnCancelLck"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+			android:textSize="12sp"
+			android:textAllCaps="false"
+            android:text="Oke, I know" />
+    </LinearLayout>
+
+</LinearLayout>

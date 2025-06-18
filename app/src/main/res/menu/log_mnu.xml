@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+        
+    <item 
+		android:id="@+id/mclearLog" 
+		android:icon="@drawable/deletee"
+		android:title="Clear Log" 
+		app:showAsAction="always">
+	</item>
+</menu>
+    
+    

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<dimen name="padding_small">8dp</dimen>
+	<dimen name="padding_medium">8dp</dimen>
+	<dimen name="padding_large">16dp</dimen>
+	<dimen name="title_size">20dp</dimen>
+	<dimen name="alert_def_padding">18dp</dimen>
+
+	<dimen name="default_card_height">45dp</dimen>
+    <dimen name="default_vertical_padding">5dp</dimen>
+
+	<dimen name="alert_widths">280dp</dimen>
+	<dimen name="alert_width">280dp</dimen>
+    <dimen name="common_circle_width">3dp</dimen>
+    <dimen name="progress_circle_radius">34dp</dimen>
+        <dimen name="layer_padding">3dp</dimen>
+    <dimen name="corner_radius">0dp</dimen>
+    <dimen name="activity_margin">4dp</dimen>
+    <dimen name="checkbox_margin">8dp</dimen>
+    <dimen name="toolbar_image_margin">16dp</dimen>
+    <dimen name="checkbox_dimens">24dp</dimen>
+    
+        <dimen name="paddingItemsSidebarLog">20dp</dimen>
+    <dimen name="stdpadding">8dp</dimen>
+    <bool name="logSildersAlwaysVisible">false</bool>
+
+    <dimen name="diameter">48dp</dimen>
+    <dimen name="elevation_low">1dp</dimen>
+    <dimen name="elevation_high">4dp</dimen>
+    <dimen name="add_button_margin">16dp</dimen>
+    <dimen name="add_button_margin_topfab">96dp</dimen>
+    <dimen name="round_button_diameter">56dp</dimen>
+    <dimen name="switchbar_pad">16dp</dimen>
+    <dimen name="vpn_setting_padding">16dp</dimen>
+
+   <dimen name="activity_horizontal_margin">16.0dip</dimen>
+   <dimen name="activity_vertical_margin">16.0dip</dimen>
+</resources>

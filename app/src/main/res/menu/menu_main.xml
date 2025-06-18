@@ -1,0 +1,52 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	
+	
+    <item
+        android:id="@+id/shareNet"
+        android:title="Network">
+		<menu>
+			<item
+                android:id="@+id/hotspotTethring"
+                android:title="Hotspot/Tether(No Root)" 
+                app:showAsAction="never"
+            	android:visible="true"
+            	android:checkable="true"/>
+			<item
+                android:id="@+id/disableTcpDelay"
+                android:title="Disable TCP Delay(SSH)" 
+                app:showAsAction="never"
+            	android:visible="true"
+            	android:checkable="true"/>
+		</menu>
+    </item>
+    
+    <item
+        android:id="@+id/myUtility"
+        android:title="Utility">
+		<menu>
+			<item
+            	android:id="@+id/AutoClearLog"
+            	android:title="AutoClearLog"
+                app:showAsAction="never"
+            	android:visible="true"
+            	android:checkable="true"/>
+            	
+            <item
+            	android:id="@+id/DataCompress"
+            	android:title="Data Compression"
+                app:showAsAction="never"
+            	android:visible="true"
+            	android:checkable="true"/>
+		</menu>
+    </item>
+		
+	<item
+        android:id="@+id/hapusKeDefault"
+        android:title="Clear Settings"/>
+		
+	<item
+        android:id="@+id/myExit"
+        android:title="Exit"/>
+
+</menu>
